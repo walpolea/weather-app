@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>{{title}}</title>
+</head>
+
+<body>
+  <main>
+    {{>header}}
+
+    <form class="weather-form">
+      <input type="text" placeholder="Location" class="weather-input">
+      <button class="get-weather-button">Get Weather</button>
+    </form>
+
+    <div class="weather">
+      <h2 class="weather-location"></h2>
+      <p class="weather-forecast"></p>
+    </div>
+
+    {{#if error}}
+    <p class="error">{{error}}</p>
+    {{/if}}
+
+    {{#if forecast}}
+    <h2>{{forecast.location}}</h2>
+    <p>{{forecast.forecast}}</p>
+    {{/if}}
+    {{>footer}}
+  </main>
+
+  {{>scripts}}
+</body>
+
+</html>
